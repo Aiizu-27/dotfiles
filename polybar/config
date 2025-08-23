@@ -1,0 +1,62 @@
+[colors]
+; Paleta minimal: morado, blanco, gris y negro
+background = #1e1e2e
+foreground = #ffffff
+accent = #a855f7
+gray = #808080
+
+[bar/mybar]
+width = 100%
+height = 28
+background = ${colors.background}
+foreground = ${colors.foreground}
+font-0 = "JetBrainsMono Nerd Font:style=Regular:size=11"
+radius = 0
+border-size = 0
+padding-left = 2
+padding-right = 2
+module-margin = 3
+separator = " | "
+
+modules-left = workspaces
+modules-center =
+modules-right = cpu memory battery date
+
+; ====================
+; MODULES
+; ====================
+
+[module/workspaces]
+type = internal/i3
+format = <label-state>
+format-focused = %name%
+label-focused = %name%
+label-focused-foreground = ${colors.accent}
+label-occupied = %name%
+label-occupied-foreground = ${colors.foreground}
+label-empty = %name%
+label-empty-foreground = ${colors.gray}
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format = "CPU: %percentage%%"
+label = %percentage%%
+
+[module/memory]
+type = internal/memory
+interval = 5
+format = "RAM: %used%/%total%"
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC
+format-charging = "AC"
+format-discharging = "BAT %percentage%%"
+
+[module/date]
+type = internal/date
+interval = 60
+date = "%a %d %b %H:%M"
+label = %date%
