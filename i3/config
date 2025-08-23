@@ -100,6 +100,22 @@ bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
+# ==========================
+# BORDES Y COLORES DE VENTANAS
+# ==========================
+# Grosor de los bordes
+new_window pixel 2
+default_border pixel 2
+
+# Colores de los bordes
+# Formato: client.estado borde_fondo borde_titulo texto_fondo texto_titulo
+client.focused          #8800FF #000000 #FFFFFF #8800FF #FFFFFF
+client.focused_inactive #550099 #000000 #AAAAAA #550099 #FFFFFF
+client.unfocused        #333333 #000000 #888888 #333333 #FFFFFF
+client.urgent           #FF0000 #000000 #FFFFFF #FF0000 #FFFFFF
+client.placeholder      #000000 #000000 #FFFFFF #000000 #FFFFFF
+
+
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
@@ -189,6 +205,8 @@ bar {
         status_command i3status
 }
 
+#Ejecutar polybar al iniciar i3
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
+# Ejecutar picom al iniciar i3
 exec --no-startup-id picom
