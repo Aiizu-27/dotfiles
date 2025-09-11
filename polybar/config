@@ -4,19 +4,20 @@ background = #1e1e2e
 foreground = #ffffff
 accent = #a855f7
 gray = #808080
+red = #ff5555
 
 [bar/mybar]
 width = 100%
 height = 28
-background = ${colors.background}
+background = ${colors.background}cc  ; 80% opacidad si usas picom
 foreground = ${colors.foreground}
 font-0 = "JetBrainsMono Nerd Font:style=Regular:size=11"
 radius = 0
 border-size = 0
-padding-left = 2
-padding-right = 2
-module-margin = 3
-separator = " | "
+padding-left = 5
+padding-right = 5
+module-margin = 6
+separator = " • "
 
 modules-left = workspaces
 modules-center =
@@ -36,27 +37,32 @@ label-occupied = %name%
 label-occupied-foreground = ${colors.foreground}
 label-empty = %name%
 label-empty-foreground = ${colors.gray}
+label-urgent-foreground = ${colors.red}
 
 [module/cpu]
 type = internal/cpu
 interval = 2
-format = "CPU: %percentage%%"
-label = %percentage%%
+format = "🖥 CPU: %percentage%%"
+format-foreground = ${colors.foreground}
+format-foreground-red = ${colors.red}
 
 [module/memory]
 type = internal/memory
 interval = 5
-format = "RAM: %used%/%total%"
+format = "💾 RAM: %used%/%total%"
+label-foreground = ${colors.foreground}
 
 [module/battery]
 type = internal/battery
 battery = BAT0
 adapter = AC
-format-charging = "AC"
-format-discharging = "BAT %percentage%%"
+format-charging = "⚡ AC"
+format-discharging = "🔋 %percentage%%"
+label-foreground = ${colors.foreground}
+label-foreground-red = ${colors.red}
 
 [module/date]
 type = internal/date
 interval = 60
-date = "%a %d %b %H:%M"
-label = %date%
+date = "📅 %a %d %b %H:%M"
+label-foreground = ${colors.foreground}
