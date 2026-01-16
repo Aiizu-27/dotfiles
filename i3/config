@@ -213,3 +213,21 @@ exec --no-startup-id picom
 
 #Abrir Rofi
 bindsym $mod+d exec rofi -show drun
+
+
+# --- PALETA DE COLORES ---
+set $bg           #1E1E1E
+set $bg_alt       #3F4039
+set $fg           #E6E6E6
+set $fg_alt       #7A7A7A
+set $rojo         #BF5F55
+set $rosa         #B26E72
+set $beige        #D9CC8F
+
+# class                 border  backgr. text    indicator child_border
+client.focused          $rojo   $rojo   $bg     $rosa     $rojo
+client.focused_inactive $bg_alt $bg_alt $fg     $bg_alt   $bg_alt
+client.unfocused        $bg     $bg     $fg_alt $bg       $bg
+client.urgent           $rosa   $rosa   $bg     $rosa     $rosa
+client.placeholder      $bg     $bg     $fg     $bg       $bg
+client.background       $bg

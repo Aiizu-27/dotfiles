@@ -1,63 +1,32 @@
-# ~/.config/alacritty/alacritty.toml
-
-# ==========================
-# WINDOW
-# ==========================
-[window]
-dynamic_title = true
-startup_mode = "Windowed"
-padding = { x = 10, y = 10 }
-
-# ==========================
-# FONT
-# ==========================
-[font]
-size = 11.0
-
-[font.normal]
-family = "Arial"
-
-[font.bold]
-family = "Arial"
-style = "Bold"
-
-# ==========================
-# COLORS
-# ==========================
+[colors]
+# Colores por defecto
 [colors.primary]
-background = "0x000000"  # negro
-foreground = "0xE0E0E0"  # blanco/gris claro
+background = "#1E1E1E"
+foreground = "#E6E6E6"
 
+# Cursor
+[colors.cursor]
+text = "#1E1E1E"
+cursor = "#D9CC8F"
+
+# Colores Normales
 [colors.normal]
-black   = "0x000000"  # negro
-red     = "0x9B59B6"  # morado
-green   = "0x7F8C8D"  # gris oscuro
-yellow  = "0xBDC3C7"  # gris claro
-blue    = "0x8E44AD"  # morado oscuro
-magenta = "0x9B59B6"  # morado
-cyan    = "0x7F8C8D"  # gris oscuro
-white   = "0xFFFFFF"  # blanco
+black   = "#1E1E1E"
+red     = "#BF5F55"
+green   = "#D9CC8F" # Usando beige como verde para mantener la calidez
+yellow  = "#D9CC8F"
+blue    = "#7A7A7A" # Usando gris medio como azul (neutro)
+magenta = "#B26E72"
+cyan    = "#B26E72" # Reutilizando rosa
+white   = "#E6E6E6"
 
+# Colores Brillantes
 [colors.bright]
-black   = "0x555555"  # gris medio
-red     = "0xAF7AC5"  # morado claro
-green   = "0x95A5A6"  # gris
-yellow  = "0xECF0F1"  # blanco grisáceo
-blue    = "0x8E44AD"  # morado oscuro
-magenta = "0xAF7AC5"  # morado claro
-cyan    = "0x95A5A6"  # gris
-white   = "0xFFFFFF"  # blanco
-
-# ==========================
-# CURSOR
-# ==========================
-[cursor]
-style = "Block"
-unfocused_hollow = true
-
-# ==========================
-# SCROLLING
-# ==========================
-[scrolling]
-history = 10000
-multiplier = 3
+black   = "#4A4A4A"
+red     = "#BF5F55"
+green   = "#D9CC8F"
+yellow  = "#D9CC8F"
+blue    = "#7A7A7A"
+magenta = "#B26E72"
+cyan    = "#B26E72"
+white   = "#FFFFFF"
