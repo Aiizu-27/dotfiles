@@ -206,7 +206,7 @@ bindsym $mod+r mode "resize"
 # }
 
 #Ejecutar polybar al iniciar i3
-exec_always --no-startup-id /root/.config/polybar/launch.sh
+exec_always --no-startup-id /root/.config/polybar/launch.sh > /tmp/polybar.log 2>&1
 
 # Ejecutar picom al iniciar i3
 exec --no-startup-id picom
