@@ -209,7 +209,7 @@ bindsym $mod+r mode "resize"
 exec_always --no-startup-id /root/.config/polybar/launch.sh > /tmp/polybar.log 2>&1
 
 # Ejecutar picom al iniciar i3
-exec --no-startup-id picom
+exec_always --no-startup-id picom --config /root/.config/picom/picom.conf -b
 
 #Abrir Rofi
 bindsym $mod+d exec rofi -show drun
