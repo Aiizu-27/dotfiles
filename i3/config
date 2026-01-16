@@ -231,3 +231,6 @@ client.unfocused        $bg     $bg     $fg_alt $bg       $bg
 client.urgent           $rosa   $rosa   $bg     $rosa     $rosa
 client.placeholder      $bg     $bg     $fg     $bg       $bg
 client.background       $bg
+
+# Fondo de pantalla
+exec_always --no-startup-id feh --bg-scale /root/dotfiles/imagen/fondo.png
