@@ -214,6 +214,9 @@ exec_always --no-startup-id picom --config /root/.config/picom/picom.conf -b
 #Abrir Rofi
 bindsym $mod+d exec rofi -show drun
 
+#Abrir Ranger (carpetas)
+bindsym $mod+f exec --no-startup-id alacritty -e ranger
+
 
 # --- PALETA DE COLORES ---
 set $bg           #1E1E1E
