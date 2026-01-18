@@ -236,4 +236,4 @@ client.placeholder      $bg     $bg     $fg     $bg       $bg
 client.background       $bg
 
 # Fondo de pantalla
-exec_always --no-startup-id feh --bg-scale ~/dotfiles/imagen/fondo.png
+exec_always --no-startup-id feh --bg-scale ../../dotfiles/imagen/fondo.png
