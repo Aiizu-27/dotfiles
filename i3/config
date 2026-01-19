@@ -243,3 +243,11 @@ exec_always --no-startup-id dunst
 
 #Ejecutar autostart
 exec_always --no-startup-id /home/aiizu/.dotfiles/scripts/autostart.sh
+
+#Ejecutar PulseAudio
+exec --no-startup-id pulseaudio --daemonize
+
+#Teclas de sonido DE MOMENTO NO FUNCIONA
+bindsym $mod+Shift+F12 exec pamixer --increase 5
+bindsym $mod+Shift+F11 exec pamixer --decrease 5
+bindsym $mod+Shift+F10 exec pamixer --toggle-mute
