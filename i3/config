@@ -206,7 +206,7 @@ bindsym $mod+r mode "resize"
 # }
 
 #Ejecutar polybar al iniciar i3
-exec_always --no-startup-id home/aiizu/.config/polybar/launch.sh > /tmp/polybar.log 2>&1
+exec_always --no-startup-id /home/aiizu/.config/polybar/launch.sh > /tmp/polybar.log 2>&1
 
 # Ejecutar picom al iniciar i3
 exec_always --no-startup-id picom --config /home/aiizu/.config/picom/picom.conf -b
@@ -236,7 +236,7 @@ client.placeholder      $bg     $bg     $fg     $bg       $bg
 client.background       $bg
 
 # Fondo de pantalla
-exec_always --no-startup-id feh --bg-scale /home/aiizu/.dotfiles/imagen/fondo.png
+exec_always --no-startup-id feh --bg-scale /home/aiizu/.dotfiles/wallpaper/fondo.png
 
 #Script autostart
-exec --no-startup-id ~/.dotfiles/scripts/autostart.sh
+exec_always --no-startup-id ~/.dotfiles/scripts/autostart.sh
