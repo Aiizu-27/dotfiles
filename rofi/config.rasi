@@ -3,7 +3,7 @@ configuration {
     modi: "drun,run,window";
     font: "Monospace 14";
     show-icons: true;
-    icon-theme: "Papirus";
+    icon-theme = "/home/aiizu/.dotfiles/icons/papirus";
     display-drun: "🚀 Apps";
     display-run: "⚙️ Run";
     display-window: "📦 Windows";
