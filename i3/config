@@ -239,4 +239,4 @@ client.background       $bg
 exec_always --no-startup-id feh --bg-scale /home/aiizu/.dotfiles/wallpaper/fondo.png
 
 #Script autostart
-exec_always --no-startup-id ~/.dotfiles/scripts/autostart.sh
+exec_always --no-startup-id /home/aiizu/.dotfiles/scripts/autostart.sh

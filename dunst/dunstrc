@@ -1,0 +1,33 @@
+[global]
+    # Posición y comportamiento
+    geometry = "300x5-10+10"   ; ancho x alto - margen derecho - margen superior
+    alignment = "right"
+    sort = "last"
+    transparency = 0           ; transparencia total desactivada
+    frame_width = 2
+    corner_radius = 8
+    padding = 10
+    monitor = 0
+    shrink = 5
+    origin = "top-right"
+
+[urgency_low]
+    background = "#3F4039"      ; gris verdoso oscuro
+    foreground = "#E6E6E6"      ; casi blanco (texto principal)
+    frame_color = "#7A7A7A"     ; gris medio para bordes
+    timeout = 5
+    format = "%s"
+
+[urgency_normal]
+    background = "#BF5F55"      ; rojo apagado
+    foreground = "#E6E6E6"
+    frame_color = "#7A7A7A"
+    timeout = 10
+    format = "%s"
+
+[urgency_critical]
+    background = "#B26E72"      ; rosa viejo
+    foreground = "#1E1E1E"      ; negro suave para contraste
+    frame_color = "#D9CC8F"     ; detalles cálidos
+    timeout = 0                 ; requiere acción del usuario
+    format = "%s"
