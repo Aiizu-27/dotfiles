@@ -235,8 +235,8 @@ client.urgent           $rosa   $rosa   $bg     $rosa     $rosa
 client.placeholder      $bg     $bg     $fg     $bg       $bg
 client.background       $bg
 
-# Fondo de pantalla
+#Fondo de pantalla
 exec_always --no-startup-id feh --bg-scale /home/aiizu/.dotfiles/wallpaper/fondo.png
 
-#Script autostart
-exec_always --no-startup-id /home/aiizu/.dotfiles/scripts/autostart.sh
+#Iniciar notificaciones
+exec_always --no-startup-id dunst
