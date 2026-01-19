@@ -1,18 +1,76 @@
 #!/bin/bash
 
-# Script para instalar programas básicos de ricing en Arch Linux
-# Ejecútalo con: ./install-ricing.sh
+########################################
+# Script completo de ricing para Arch
+# Rofi · Alacritty · Picom · Polybar
+# Zsh · Oh My Zsh · Plugins · Ranger · Feh
+########################################
 
+set -e
+
+# Ruta de Oh My Zsh
+ZSH_CUSTOM=${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}
+
+echo "🚀 Iniciando instalación de entorno de ricing..."
+
+# --------------------------------------------------
 # Actualizar sistema
+# --------------------------------------------------
 echo "🔄 Actualizando sistema..."
 sudo pacman -Syu --noconfirm
 
-# Instalar paquetes
-echo "✨ Instalando Rofi, Alacritty, Picom y Polybar..."
+# --------------------------------------------------
+# Instalar paquetes base
+# --------------------------------------------------
+echo "✨ Instalando paquetes..."
 sudo pacman -S --noconfirm --needed \
     rofi \
     alacritty \
     picom \
-    polybar
+    polybar \
+    zsh \
+    ranger \
+    feh \
+    git \
+    curl
 
-echo "✅ Instalación completada. ¡Ya tienes tus herramientas de ricing listas!"
+# --------------------------------------------------
+# Instalar Oh My Zsh
+# --------------------------------------------------
+echo "🐚 Instalando Oh My Zsh..."
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+    RUNZSH=no CHSH=no sh -c \
+    "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+else
+    echo "ℹ️  Oh My Zsh ya está instalado."
+fi
+
+# --------------------------------------------------
+# Plugins de Zsh
+# --------------------------------------------------
+echo "🔌 Instalando plugins de Zsh..."
+
+# zsh-autosuggestions
+if [ ! -d "$ZSH_CUSTOM/plugins/zsh-autosuggestions" ]; then
+    echo "📦 Instalando zsh-autosuggestions..."
+    git clone https://github.com/zsh-users/zsh-autosuggestions \
+        "$ZSH_CUSTOM/plugins/zsh-autosuggestions"
+else
+    echo "✅ zsh-autosuggestions ya está instalado."
+fi
+
+# zsh-syntax-highlighting
+if [ ! -d "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting" ]; then
+    echo "📦 Instalando zsh-syntax-highlighting..."
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
+        "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting"
+else
+    echo "✅ zsh-syntax-highlighting ya está instalado."
+fi
+
+# --------------------------------------------------
+# Final
+# --------------------------------------------------
+echo ""
+echo "🎉 Instalación completada con éxito."
+echo "🔁 Reinicia la terminal o ejecuta: source ~/.zshrc"
