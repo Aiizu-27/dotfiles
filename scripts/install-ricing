@@ -32,7 +32,8 @@ sudo pacman -S --noconfirm --needed \
     ranger \
     feh \
     git \
-    curl
+    curl \
+    dunst  # <-- añadido Dunst
 
 # --------------------------------------------------
 # Instalar Oh My Zsh
@@ -43,29 +44,6 @@ if [ ! -d "$HOME/.oh-my-zsh" ]; then
     "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 else
     echo "ℹ️  Oh My Zsh ya está instalado."
-fi
-
-# --------------------------------------------------
-# Plugins de Zsh
-# --------------------------------------------------
-echo "🔌 Instalando plugins de Zsh..."
-
-# zsh-autosuggestions
-if [ ! -d "$ZSH_CUSTOM/plugins/zsh-autosuggestions" ]; then
-    echo "📦 Instalando zsh-autosuggestions..."
-    git clone https://github.com/zsh-users/zsh-autosuggestions \
-        "$ZSH_CUSTOM/plugins/zsh-autosuggestions"
-else
-    echo "✅ zsh-autosuggestions ya está instalado."
-fi
-
-# zsh-syntax-highlighting
-if [ ! -d "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting" ]; then
-    echo "📦 Instalando zsh-syntax-highlighting..."
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
-        "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting"
-else
-    echo "✅ zsh-syntax-highlighting ya está instalado."
 fi
 
 # --------------------------------------------------

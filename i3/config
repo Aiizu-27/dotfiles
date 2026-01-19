@@ -237,3 +237,6 @@ client.background       $bg
 
 # Fondo de pantalla
 exec_always --no-startup-id feh --bg-scale /home/aiizu/.dotfiles/imagen/fondo.png
+
+#Script autostart
+exec --no-startup-id ~/.dotfiles/scripts/autostart.sh
