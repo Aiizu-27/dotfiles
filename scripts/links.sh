@@ -9,8 +9,7 @@ set -e
 # --------------------------------------------------
 # Rutas
 # --------------------------------------------------
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-DOTFILES="$SCRIPT_DIR"
+DOTFILES="$HOME/.dotfiles"
 BACKUP="$HOME/.dotfiles_backup"
 
 echo "🔗 Aplicando dotfiles desde: $DOTFILES"
