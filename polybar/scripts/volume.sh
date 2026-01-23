@@ -1,5 +1,5 @@
 #!/bin/bash
-# Muestra volumen con barra visual para Polybar
+# Muestra volumen con barra visual en ASCII para Polybar
 
 VOL=$(pamixer --get-volume)
 MUTE=$(pamixer --get-mute)
@@ -9,23 +9,23 @@ if [ "$VOL" -gt 100 ]; then
     VOL=100
 fi
 
-# Número de bloques de la barra (puedes cambiar 10 a 20 si quieres más precisión)
+# Número de bloques de la barra
 BLOCKS=10
 FILLED=$(( VOL * BLOCKS / 100 ))
 EMPTY=$(( BLOCKS - FILLED ))
 
-# Construir la barra
+# Construir la barra ASCII
 BAR=""
 for ((i=0; i<FILLED; i++)); do
-    BAR+="█"
+    BAR+="#"
 done
 for ((i=0; i<EMPTY; i++)); do
-    BAR+="░"
+    BAR+="-"
 done
 
 # Mostrar resultado
 if [ "$MUTE" = "true" ]; then
-    echo "MUTE $BAR"
+    echo "MUTE [$BAR]"
 else
-    echo "$VOL% $BAR"
+    echo "$VOL% [$BAR]"
 fi
