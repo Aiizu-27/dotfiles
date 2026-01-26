@@ -1,97 +1,85 @@
-/***** 1. CONFIGURACIÓN DEL SISTEMA *****/
 configuration {
     modi: "drun,run,window";
-    font: "Monospace 14";
     show-icons: true;
-    icon-theme: "Papirus";
-    display-drun: "🚀 Apps";
-    display-run: "⚙️ Run";
-    display-window: "📦 Windows";
-    drun-display-format: "{name}";
-    window-format: "{w} · {c} · {t}";
-    case-sensitive: false;
-    cycle: true;
-    scroll-method: 0;
+    font: "JetBrainsMono Nerd Font 12";
+    display-drun: "🐍 Apps";
+    display-run: "🚀 Run";
+    display-window: "🪟 Win";
 }
 
-/***** 2. TU PALETA DE COLORES PERSONALIZADA *****/
+/* --- TEMA Y COLORES --- */
 * {
-    /* --- DEFINICIÓN DE COLORES --- */
-    mi-fondo:           #1E1E1E;    /* Negro suave */
-    mi-texto:           #E6E6E6;    /* Casi blanco */
-    mi-texto-sec:       #7A7A7A;    /* Gris medio */
+    /* Tu Paleta */
+    bg:      #1A2E12;  /* Dark Jungle Green */
+    fg:      #D2D5DE;  /* Light Silver */
+    accent:  #A87CC7;  /* African Violet */
+    green:   #658751;  /* Axolotl */
+    blue:    #7F89E9;  /* Vista Blue */
     
-    mi-borde:           #D9CC8F;    /* Beige amarillento (Detalle cálido) */
-    mi-seleccion:       #BF5F55;    /* Rojo apagado (Acento) */
-    
-    mi-barra:           #3F4039;    /* Verde grisáceo (Paneles) */
-    mi-prompt:          #B26E72;    /* Rosa viejo (Interactivo) */
-    
-    /* Variables del sistema */
-    background-color:   transparent;
-    text-color:         @mi-texto;
+    background-color: @bg;
+    text-color:       @fg;
+    border:           0px;
+    margin:           0px;
+    padding:          0px;
+    spacing:          0px;
 }
-
-/* --- DISEÑO VISUAL --- */
 
 window {
-    background-color:   @mi-fondo;
-    border:             2px;
-    border-color:       @mi-borde;
-    border-radius:      12px;
-    width:              45%;
-    padding:            20px;
+    width:            35%;     /* Ancho de la ventana */
+    border:           2px;
+    border-color:     @accent; /* Borde violeta */
+    border-radius:    12px;    /* Esquinas redondas */
+    padding:          20px;
 }
 
 inputbar {
-    children:           [ prompt, entry ];
-    background-color:   transparent;
-    margin:             0px 0px 15px 0px;
+    children: [ prompt, entry ];
+    background-color: @bg;
+    padding:          10px;
+    border-radius:    8px;
+    margin:           0px 0px 10px 0px;
 }
 
 prompt {
-    background-color:   @mi-prompt;
-    text-color:         #1E1E1E;    /* Texto oscuro para contraste en el rosa */
-    padding:            12px 15px;
-    border-radius:      8px 0px 0px 8px;
-    font-weight:        bold;
+    background-color: @green;
+    text-color:       @bg;
+    padding:          5px 10px;
+    border-radius:    6px;
+    margin:           0px 10px 0px 0px;
 }
 
 entry {
-    background-color:   @mi-barra;
-    text-color:         @mi-texto;
-    placeholder:        "Escribe para buscar...";
-    placeholder-color:  @mi-texto-sec;
-    padding:            12px;
-    border-radius:      0px 8px 8px 0px;
+    background-color: @bg;
+    text-color:       @fg;
+    placeholder:      "Buscar...";
+    placeholder-color: #666666;
+    padding:          5px;
 }
 
 listview {
-    lines:              8;
-    columns:            1;
-    scrollbar:          false;
-    spacing:            5px;
+    lines:            8;
+    scrollbar:        false;
 }
 
 element {
-    padding:            10px;
-    border-radius:      6px;
-    background-color:   transparent;
-    text-color:         @mi-texto-sec; /* Texto gris si no está seleccionado */
-}
-
-/* Cuando seleccionas un programa */
-element selected {
-    background-color:   @mi-seleccion;
-    text-color:         #E6E6E6;       /* Texto claro al seleccionar */
+    padding:          8px;
+    border-radius:    6px;
 }
 
 element-icon {
-    size:               28px;
-    margin:             0 12px 0 0;
-    vertical-align:     0.5;
+    size:             24px;
+    padding:          0px 10px 0px 0px;
+    background-color: inherit; /* Heredar color del padre para que no salga blanco */
 }
 
 element-text {
-    vertical-align:     0.5;
+    vertical-align:   0.5;
+    background-color: inherit;
+    text-color:       inherit;
+}
+
+/* Estado Seleccionado */
+element selected {
+    background-color: @blue;   /* Vista Blue al seleccionar */
+    text-color:       @bg;     /* Texto oscuro para contraste */
 }

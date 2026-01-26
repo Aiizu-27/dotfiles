@@ -217,24 +217,6 @@ bindsym $mod+d exec rofi -show drun
 #Abrir Ranger (carpetas)
 bindsym $mod+f exec --no-startup-id alacritty -e ranger
 
-
-# --- PALETA DE COLORES ---
-set $bg           #1E1E1E
-set $bg_alt       #3F4039
-set $fg           #E6E6E6
-set $fg_alt       #7A7A7A
-set $rojo         #BF5F55
-set $rosa         #B26E72
-set $beige        #D9CC8F
-
-# class                 border  backgr. text    indicator child_border
-client.focused          $rojo   $rojo   $bg     $rosa     $rojo
-client.focused_inactive $bg_alt $bg_alt $fg     $bg_alt   $bg_alt
-client.unfocused        $bg     $bg     $fg_alt $bg       $bg
-client.urgent           $rosa   $rosa   $bg     $rosa     $rosa
-client.placeholder      $bg     $bg     $fg     $bg       $bg
-client.background       $bg
-
 #Fondo de pantalla
 exec_always --no-startup-id feh --bg-scale /home/aiizu/.dotfiles/wallpaper/fondo.png
 
@@ -244,10 +226,37 @@ exec_always --no-startup-id dunst
 #Ejecutar autostart
 exec_always --no-startup-id /home/aiizu/.dotfiles/scripts/autostart.sh
 
-#Ejecutar PulseAudio
-exec --no-startup-id pulseaudio --daemonize
 
-#Teclas de sonido DE MOMENTO NO FUNCIONA
-bindsym $mod+Shift+F12 exec pamixer --increase 5
-bindsym $mod+Shift+F11 exec pamixer --decrease 5
-bindsym $mod+Shift+F10 exec pamixer --toggle-mute
+
+#ESTILO
+
+# --- GAPS (Espacios entre ventanas) ---
+# Necesitas i3-gaps (que ya viene por defecto en versiones modernas de i3)
+gaps inner 10
+gaps outer 5
+
+# Quitar barra de título fea
+default_border pixel 2
+default_floating_border pixel 2
+
+# --- COLORES DE LA PALETA ---
+# Definiciones de variables para usar tu paleta
+set $bg     #1A2E12
+set $fg     #D2D5DE
+set $acento #A87CC7
+set $verde  #658751
+set $azul   #7F89E9
+
+# class                 border  backgr. text    indicator child_border
+client.focused          $acento $bg     $fg     $acento   $acento
+client.focused_inactive $verde  $bg     $fg     $verde    $verde
+client.unfocused        $bg     $bg     $verde  $bg       $bg
+client.urgent           $azul   $azul   $fg     $azul     $azul
+
+# Gaps normales
+gaps inner 10
+gaps outer 5
+
+# --- ESPACIO EXTRA PARA LA POLYBAR FLOTANTE ---
+# Ajusta el "60" si ves que la barra queda muy pegada o muy lejos de las ventanas.
+gaps top 60

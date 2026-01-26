@@ -1,32 +1,24 @@
+[window]
+padding = { x = 20, y = 20 } # Espacio interno para que el texto no pegue al borde
+decorations = "none"
+
+[font]
+normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
+size = 11.0
+
 [colors]
-# Colores por defecto
+# Colores primarios
 [colors.primary]
-background = "#1E1E1E"
-foreground = "#E6E6E6"
+background = "#1A2E12" # Dark Jungle Green
+foreground = "#D2D5DE" # Light Silver
 
-# Cursor
-[colors.cursor]
-text = "#1E1E1E"
-cursor = "#D9CC8F"
-
-# Colores Normales
+# Colores normales
 [colors.normal]
-black   = "#1E1E1E"
-red     = "#BF5F55"
-green   = "#D9CC8F" # Usando beige como verde para mantener la calidez
-yellow  = "#D9CC8F"
-blue    = "#7A7A7A" # Usando gris medio como azul (neutro)
-magenta = "#B26E72"
-cyan    = "#B26E72" # Reutilizando rosa
-white   = "#E6E6E6"
-
-# Colores Brillantes
-[colors.bright]
-black   = "#4A4A4A"
-red     = "#BF5F55"
-green   = "#D9CC8F"
-yellow  = "#D9CC8F"
-blue    = "#7A7A7A"
-magenta = "#B26E72"
-cyan    = "#B26E72"
-white   = "#FFFFFF"
+black   = "#1A2E12"
+red     = "#A87CC7" # Usamos African Violet como color destacado
+green   = "#658751" # Axolotl
+yellow  = "#D2D5DE"
+blue    = "#7F89E9" # Vista Blue
+magenta = "#A87CC7"
+cyan    = "#7F89E9"
+white   = "#D2D5DE"
