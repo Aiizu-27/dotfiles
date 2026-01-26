@@ -212,7 +212,7 @@ exec_always --no-startup-id /home/aiizu/.config/polybar/launch.sh > /tmp/polybar
 exec_always --no-startup-id picom --config /home/aiizu/.config/picom/picom.conf -b
 
 #Abrir Rofi
-bindsym $mod+d exec rofi -show drun
+bindsym $mod+d exec "rofi -show drun"
 
 #Abrir Ranger (carpetas)
 bindsym $mod+f exec --no-startup-id alacritty -e ranger

@@ -3,21 +3,19 @@ configuration {
     show-icons: true;
     font: "JetBrainsMono Nerd Font 12";
     display-drun: "🐍 Apps";
-    display-run: "🚀 Run";
-    display-window: "🪟 Win";
 }
 
-/* --- TEMA Y COLORES --- */
+/* --- TEMA Y COLORES REFORZADO --- */
 * {
-    /* Tu Paleta */
-    bg:      #1A2E12;  /* Dark Jungle Green */
-    fg:      #D2D5DE;  /* Light Silver */
-    accent:  #A87CC7;  /* African Violet */
-    green:   #658751;  /* Axolotl */
-    blue:    #7F89E9;  /* Vista Blue */
+    bg:      #1A2E12;
+    fg:      #D2D5DE;
+    accent:  #A87CC7;
+    blue:    #7F89E9;
     
     background-color: @bg;
     text-color:       @fg;
+    /* IMPORTANTE: Forzamos que el borde global sea transparente */
+    border-color:     transparent; 
     border:           0px;
     margin:           0px;
     padding:          0px;
@@ -25,11 +23,13 @@ configuration {
 }
 
 window {
-    width:            35%;     /* Ancho de la ventana */
-    border:           2px;
-    border-color:     @accent; /* Borde violeta */
-    border-radius:    12px;    /* Esquinas redondas */
+    width:            35%;
+    /* IMPORTANTE: Aquí definimos el borde y su color directamente */
+    border:           3px; /* Un poco más grueso para verlo bien */
+    border-color:     #A87CC7; /* African Violet directo */
+    border-radius:    12px;
     padding:          20px;
+    background-color: #1A2E12;
 }
 
 inputbar {
@@ -38,11 +38,14 @@ inputbar {
     padding:          10px;
     border-radius:    8px;
     margin:           0px 0px 10px 0px;
+    /* Un borde fino extra para la barra de búsqueda */
+    border: 1px;
+    border-color: #A87CC7;
 }
 
 prompt {
-    background-color: @green;
-    text-color:       @bg;
+    background-color: #A87CC7;
+    text-color:       #1A2E12;
     padding:          5px 10px;
     border-radius:    6px;
     margin:           0px 10px 0px 0px;
@@ -52,13 +55,13 @@ entry {
     background-color: @bg;
     text-color:       @fg;
     placeholder:      "Buscar...";
-    placeholder-color: #666666;
     padding:          5px;
 }
 
 listview {
     lines:            8;
     scrollbar:        false;
+    margin:           10px 0px 0px 0px;
 }
 
 element {
@@ -69,7 +72,7 @@ element {
 element-icon {
     size:             24px;
     padding:          0px 10px 0px 0px;
-    background-color: inherit; /* Heredar color del padre para que no salga blanco */
+    background-color: inherit;
 }
 
 element-text {
@@ -78,8 +81,7 @@ element-text {
     text-color:       inherit;
 }
 
-/* Estado Seleccionado */
 element selected {
-    background-color: @blue;   /* Vista Blue al seleccionar */
-    text-color:       @bg;     /* Texto oscuro para contraste */
+    background-color: @blue;
+    text-color:       #1A2E12;
 }
