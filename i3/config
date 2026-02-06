@@ -218,7 +218,7 @@ bindsym $mod+d exec "rofi -show drun"
 bindsym $mod+f exec --no-startup-id alacritty -e ranger
 
 #Fondo de pantalla
-exec_always --no-startup-id feh --bg-scale /home/aiizu/.dotfiles/wallpaper/fondo.png
+exec_always --no-startup-id feh --bg-scale /home/aiizu/.dotfiles/wallpaper/frieren.png
 
 #Iniciar notificaciones
 exec_always --no-startup-id dunst
