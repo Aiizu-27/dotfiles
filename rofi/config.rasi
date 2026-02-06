@@ -1,87 +1,100 @@
+/* Configuración Global */
 configuration {
-    modi: "drun,run,window";
+    font: "JetBrainsMono Nerd Font 12"; /* Cambia esto por tu fuente favorita */
     show-icons: true;
-    font: "JetBrainsMono Nerd Font 12";
-    display-drun: "🐍 Apps";
+    display-drun: " ";
+    drun-display-format: "{name}";
 }
 
-/* --- TEMA Y COLORES REFORZADO --- */
+/* Definición de colores y variables */
 * {
-    bg:      #1A2E12;
-    fg:      #D2D5DE;
-    accent:  #A87CC7;
-    blue:    #7F89E9;
+    /* Fondo BLANCO con transparencia (El 'CC' al final es la opacidad aprox 80%) */
+    /* Ajusta 'CC' a '88' si lo quieres más transparente o 'EE' para más opaco */
+    bg-glass: #FFFFFF50; 
     
-    background-color: @bg;
-    text-color:       @fg;
-    /* IMPORTANTE: Forzamos que el borde global sea transparente */
-    border-color:     transparent; 
-    border:           0px;
-    margin:           0px;
-    padding:          0px;
-    spacing:          0px;
+    /* Texto oscuro (casi negro) para que se lea bien sobre blanco */
+    text-color-main: #1E1E2E; 
+    
+    /* Color de selección (un gris suave o el que prefieras) */
+    bg-selected: #00000015; 
+
+    /* Transparencia total para elementos internos */
+    transparent: #00000000;
+
+    background-color: @transparent;
+    text-color: @text-color-main;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    spacing: 0;
 }
 
+/* La ventana principal */
 window {
-    width:            35%;
-    /* IMPORTANTE: Aquí definimos el borde y su color directamente */
-    border:           3px; /* Un poco más grueso para verlo bien */
-    border-color:     #A87CC7; /* African Violet directo */
-    border-radius:    12px;
-    padding:          20px;
-    background-color: #1A2E12;
+    width: 45%;            /* Ancho de la ventana */
+    border-radius: 15px;   /* Bordes redondeados */
+    transparency: "real";  /* IMPORTANTE: Activa la transparencia real */
+    background-color: @bg-glass; /* Aquí se aplica el efecto cristal blanco */
+    border: 2px;
+    border-color: #FFFFFF; /* Un borde blanco sutil */
 }
 
+/* El contenedor principal */
+mainbox {
+    padding: 20px;
+    children: [inputbar, listview];
+}
+
+/* La barra de búsqueda */
 inputbar {
-    children: [ prompt, entry ];
-    background-color: @bg;
-    padding:          10px;
-    border-radius:    8px;
-    margin:           0px 0px 10px 0px;
-    /* Un borde fino extra para la barra de búsqueda */
-    border: 1px;
-    border-color: #A87CC7;
+    background-color: #00000010; /* Un fondo gris clarito para la barra */
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0 0 15px 0; /* Margen abajo para separar de la lista */
+    children: [prompt, entry];
 }
 
 prompt {
-    background-color: #A87CC7;
-    text-color:       #1A2E12;
-    padding:          5px 10px;
-    border-radius:    6px;
-    margin:           0px 10px 0px 0px;
+    padding: 0 10px 0 0;
+    text-color: @text-color-main;
 }
 
 entry {
-    background-color: @bg;
-    text-color:       @fg;
-    placeholder:      "Buscar...";
-    padding:          5px;
+    placeholder: "Buscar...";
+    placeholder-color: #555555;
+    text-color: @text-color-main;
 }
 
+/* La lista de aplicaciones */
 listview {
-    lines:            8;
-    scrollbar:        false;
-    margin:           10px 0px 0px 0px;
+    lines: 8;
+    columns: 1;
+    scrollbar: false;
 }
 
+/* Cada elemento de la lista */
 element {
-    padding:          8px;
-    border-radius:    6px;
+    padding: 10px;
+    border-radius: 8px;
+    text-color: @text-color-main;
 }
 
-element-icon {
-    size:             24px;
-    padding:          0px 10px 0px 0px;
-    background-color: inherit;
-}
-
-element-text {
-    vertical-align:   0.5;
-    background-color: inherit;
-    text-color:       inherit;
-}
-
+/* Cuando seleccionas un elemento */
 element selected {
-    background-color: @blue;
-    text-color:       #1A2E12;
+    background-color: @bg-selected; /* Fondo gris suave al seleccionar */
+    text-color: #000000; /* Texto negro puro al seleccionar */
+}
+
+/* Iconos */
+element-icon {
+    size: 24px;
+    padding: 0 10px 0 0;
+    background-color: inherit;
+}
+
+/* Texto de los elementos */
+element-text {
+    vertical-align: 0.5;
+    background-color: inherit;
+    text-color: inherit;
 }

@@ -1,24 +1,43 @@
 [window]
-padding = { x = 20, y = 20 } # Espacio interno para que el texto no pegue al borde
+padding = { x = 20, y = 20 }
 decorations = "none"
+# Opacidad del 85% para igualar el efecto cristal de tu Polybar
+opacity = 0.10
+# blur = true # Descomenta si usas una versión de Alacritty que lo soporte (o confía en Picom)
 
 [font]
 normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
 size = 11.0
 
 [colors]
-# Colores primarios
+# --- Colores Primarios (Suaves) ---
 [colors.primary]
-background = "#1A2E12" # Dark Jungle Green
-foreground = "#D2D5DE" # Light Silver
+background = "#EFF1F5"   # Blanco grisáceo mate (mucho más relajante)
+foreground = "#4C4F69"   # Gris oscuro (texto legible pero no agresivo)
 
-# Colores normales
+# --- Cursor ---
+[colors.cursor]
+text = "#EFF1F5"         # El texto dentro del cursor toma el color del fondo
+cursor = "#CBA6F7"       # Tu MORADO PASTEL
+
+# --- Colores Normales (Paleta Pastel Suave) ---
 [colors.normal]
-black   = "#1A2E12"
-red     = "#A87CC7" # Usamos African Violet como color destacado
-green   = "#658751" # Axolotl
-yellow  = "#D2D5DE"
-blue    = "#7F89E9" # Vista Blue
-magenta = "#A87CC7"
-cyan    = "#7F89E9"
-white   = "#D2D5DE"
+black   = "#5C5F77"      # Gris medio
+red     = "#D20F39"      # Rojo teja
+green   = "#40A02B"      # Verde hoja (más oscuro para leerse bien)
+yellow  = "#DF8E1D"
+blue    = "#1E66F5"
+magenta = "#EA76CB"      # Rosa/Morado
+cyan    = "#179299"
+white   = "#ACB0BE"      # Gris claro
+
+# --- Colores Brillantes ---
+[colors.bright]
+black   = "#6C6F85"
+red     = "#E64553"
+green   = "#5FBD54"
+yellow  = "#FE640B"
+blue    = "#2D7AF3"
+magenta = "#CBA6F7"      # <--- TU MORADO (Alert/Destacado)
+cyan    = "#04A5E5"
+white   = "#BCC0CC"
