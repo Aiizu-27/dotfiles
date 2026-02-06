@@ -1,33 +1,56 @@
 [global]
-    # Posición y comportamiento
-    geometry = "300x5-10+10"   ; ancho x alto - margen derecho - margen superior
-    alignment = "right"
-    sort = "last"
-    transparency = 0           ; transparencia total desactivada
+    # --- FUENTE Y TAMAÑO ---
+    font = JetBrainsMono Nerd Font 10
+    
+    # --- GEOMETRÍA Y POSICIÓN ---
+    # width = (min, max)
+    width = (300, 300)
+    # offset = (horizontal, vertical) - Ajusta esto para que no tape tu Polybar
+    offset = 10x50
+    origin = top-right
+    
+    # --- APARIENCIA ---
+    transparency = 0   # Dejamos que el color alpha maneje la transparencia
+    frame_color = "#FFFFFF"
     frame_width = 2
-    corner_radius = 8
-    padding = 10
-    monitor = 0
-    shrink = 5
-    origin = "top-right"
+    corner_radius = 12 # Bordes redondeados como Rofi
+    
+    # Espaciado interno
+    padding = 12
+    horizontal_padding = 12
+    text_icon_padding = 10
+    
+    # Iconos (Izquierda)
+    icon_position = left
+    min_icon_size = 32
+    max_icon_size = 32
+    
+    # Otros
+    markup = full
+    sort = yes
+    idle_threshold = 120
+    line_height = 4
+    separator_height = 2
+    separator_color = frame
+
+# --- COLORES TIPO CRISTAL (IMPORTANTE) ---
+# Formato: "#RRGGBBAA" (AA es la transparencia)
 
 [urgency_low]
-    background = "#3F4039"      ; gris verdoso oscuro
-    foreground = "#E6E6E6"      ; casi blanco (texto principal)
-    frame_color = "#7A7A7A"     ; gris medio para bordes
-    timeout = 5
-    format = "%s"
+    # Blanco con transparencia (CC = 80%)
+    background = "#FFFFFFCC"
+    foreground = "#000000"
+    timeout = 10
 
 [urgency_normal]
-    background = "#BF5F55"      ; rojo apagado
-    foreground = "#E6E6E6"
-    frame_color = "#7A7A7A"
+    # Blanco con transparencia (CC = 80%)
+    background = "#FFFFFFCC"
+    foreground = "#000000"
     timeout = 10
-    format = "%s"
 
 [urgency_critical]
-    background = "#B26E72"      ; rosa viejo
-    foreground = "#1E1E1E"      ; negro suave para contraste
-    frame_color = "#D9CC8F"     ; detalles cálidos
-    timeout = 0                 ; requiere acción del usuario
-    format = "%s"
+    # Un rojo muy suave y cristalino para errores
+    background = "#FFCCCCEE"
+    foreground = "#000000"
+    frame_color = "#FF0000"
+    timeout = 0
