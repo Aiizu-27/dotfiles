@@ -230,35 +230,50 @@ exec_always --no-startup-id /home/aiizu/.dotfiles/scripts/autostart.sh
 bindsym $mod+shift+s exec --no-startup-id flameshot gui
 
 
-#ESTILO
+# ==========================================================
+#   ESTILO "CRISTAL HIELO" (High Contrast)
+# ==========================================================
 
-# --- GAPS (Espacios entre ventanas) ---
-# Necesitas i3-gaps (que ya viene por defecto en versiones modernas de i3)
-gaps inner 10
+# --- GAPS (ESPACIADO) ---
+# Espacio interno entre ventanas (para ver el fondo)
+gaps inner 12
+# Espacio externo (márgenes laterales)
 gaps outer 5
 
-# Quitar barra de título fea
+# --- ESPACIO PARA LA POLYBAR ---
+# IMPORTANTE: Si tu barra está arriba, esto evita que las ventanas la tapen.
+# Si tu barra mide 36px de alto + margins, pon unos 50 o 60 aquí.
+gaps top 55
+
+# --- BORDES ---
+# Quitar barras de título y dejar borde fino
 default_border pixel 2
 default_floating_border pixel 2
 
-# --- COLORES DE LA PALETA ---
-# Definiciones de variables para usar tu paleta
-set $bg     #1A2E12
-set $fg     #D2D5DE
-set $acento #A87CC7
-set $verde  #658751
-set $azul   #7F89E9
+# --- PALETA DE COLORES "ICE" ---
+# Definimos variables para que sea fácil cambiar luego
+set $blanco_puro  #FFFFFF
+set $negro        #000000
+set $gris_medio   #888888
+set $gris_oscuro  #333333
+set $alerta       #FF5555
 
-# class                 border  backgr. text    indicator child_border
-client.focused          $acento $bg     $fg     $acento   $acento
-client.focused_inactive $verde  $bg     $fg     $verde    $verde
-client.unfocused        $bg     $bg     $verde  $bg       $bg
-client.urgent           $azul   $azul   $fg     $azul     $azul
+# --- CONFIGURACIÓN DE COLORES DE VENTANAS ---
+# Formato:              Borde        Fondo        Texto    Indicador    Borde_Hijo
 
-# Gaps normales
-gaps inner 10
-gaps outer 5
+# 1. Ventana ENFOCO (La que usas): Borde blanco brillante
+client.focused          $blanco_puro $blanco_puro $negro   $blanco_puro $blanco_puro
 
-# --- ESPACIO EXTRA PARA LA POLYBAR FLOTANTE ---
-# Ajusta el "60" si ves que la barra queda muy pegada o muy lejos de las ventanas.
-gaps top 60
+# 2. Ventana ENFOCO pero en otro monitor (si tienes 2 pantallas)
+client.focused_inactive $gris_oscuro $gris_oscuro $gris_medio $gris_oscuro $gris_oscuro
+
+# 3. Ventanas SIN FOCO (Fondo): Gris oscuro para que no molesten
+client.unfocused        $gris_oscuro $gris_oscuro $gris_medio $gris_oscuro $gris_oscuro
+
+# 4. Ventana URGENTE (Notificación): Un rojo suave o alerta
+client.urgent           $alerta      $alerta      $blanco_puro $alerta      $alerta
+
+# 5. Placeholder (Casi no se usa)
+client.placeholder      $negro       $negro       $blanco_puro $negro       $negro
+
+client.background       #ffffff
