@@ -226,6 +226,8 @@ exec_always --no-startup-id dunst
 #Ejecutar autostart
 exec_always --no-startup-id /home/aiizu/.dotfiles/scripts/autostart.sh
 
+#Capturas de pantalla
+bindsym $mod+shift+s exec --no-startup-id flameshot gui
 
 
 #ESTILO
