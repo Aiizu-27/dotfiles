@@ -41,3 +41,6 @@ blue    = "#2D7AF3"
 magenta = "#CBA6F7"      # <--- TU MORADO (Alert/Destacado)
 cyan    = "#04A5E5"
 white   = "#BCC0CC"
+
+[terminal.shell]
+program = "/bin/zsh"
